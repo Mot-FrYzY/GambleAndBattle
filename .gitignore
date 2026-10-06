@@ -1,0 +1,64 @@
+# ==========================================
+# JDK Local & Environnement (Hors Git)
+# ==========================================
+# Exclut tout dossier JDK placé à la racine du projet
+/jdk-*/
+/jdk/
+*.jdk/
+
+# ==========================================
+# IntelliJ IDEA
+# ==========================================
+# Fichiers de configuration utilisateur et de projet
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Si tu souhaites partager la configuration d'indentation du code d'IntelliJ avec l'équipe,
+# tu peux décommenter la ligne suivante :
+#!.idea/codeStyles/
+
+# ==========================================
+# Maven (Build Outputs)
+# ==========================================
+# Dossiers de compilation générés par Maven
+target/
+**/target/
+
+# Journaux de build Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+
+# ==========================================
+# Journaux & Fichiers Temporaires
+# ==========================================
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# ==========================================
+# Fichiers Système (OS)
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+
+# Linux
+*~
+.directory

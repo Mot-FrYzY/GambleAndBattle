@@ -21,6 +21,7 @@ public class Packets {
         kryo.register(PlayerConnect.class);
         kryo.register(PlayerDisconnect.class);
         kryo.register(PlayerMove.class);
+        kryo.register(Packets.MoveMode.class);
         kryo.register(PlayerStatsUpdate.class);
 
         // Actions de combat / jeu
@@ -29,6 +30,7 @@ public class Packets {
 
         // Dans Packets.register(Kryo kryo)
         kryo.register(com.gambleAndBattle.common.model.CharacterStats.class);
+
     }
 
     // ==========================================
@@ -95,21 +97,28 @@ public class Packets {
     // 3. DÉPLACEMENT ET POSITION
     // ==========================================
 
+    // Dans la classe Packets
+    public static enum MoveMode {
+        WALK, RUN, DODGE
+    }
+
     public static class PlayerMove {
         public int playerId;
         public float x;
         public float y;
         public float velocityX;
         public float velocityY;
+        public MoveMode mode;
 
         public PlayerMove() {}
 
-        public PlayerMove(int playerId, float x, float y, float velocityX, float velocityY) {
+        public PlayerMove(int playerId, float x, float y, float velocityX, float velocityY, MoveMode mode) {
             this.playerId = playerId;
             this.x = x;
             this.y = y;
             this.velocityX = velocityX;
             this.velocityY = velocityY;
+            this.mode = mode;
         }
     }
 
